@@ -1,13 +1,6 @@
 import { getAllPerson } from "@/services";
 import { Person } from "@/types/Person";
-import {
-	Calculator,
-
-	ShoppingCart,
-	Soup,
-	Users,
-	Utensils,
-} from "lucide-react";
+import { Calculator, ShoppingCart, Soup, Users, Utensils } from "lucide-react";
 import { Brand } from "./Brand";
 
 export default async function Header() {
@@ -21,7 +14,7 @@ export default async function Header() {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* Top Navigation */}
 				<div className="flex items-center justify-between h-16">
-					<Brand/>
+					<Brand />
 					<div className="md:flex items-center space-x-4 font-bangla hidden">
 						<div className="relative">
 							<input
@@ -59,7 +52,7 @@ export default async function Header() {
 							value={
 								totalMeals > 0
 									? `৳ ${(totalBazarCost / totalMeals).toFixed(2)}`
-									: "৳0.00"
+									: "৳ 0.00"
 							}
 							icon={<Soup className="h-8 w-8 text-indigo-400" />}
 							subtext="Meal Rate"
@@ -67,7 +60,7 @@ export default async function Header() {
 
 						<StatCard
 							label="মোট বাজার খরচ"
-							value={`৳${totalBazarCost.toLocaleString()}`}
+							value={`৳ ${totalBazarCost.toLocaleString()}`}
 							icon={<ShoppingCart className="h-8 w-8 text-pink-400" />}
 							subtext="Total Bazar Cost"
 						/>

@@ -6,9 +6,9 @@ export default function PersonCard({ person }: { person: Person }) {
 	const isSettled = person.amount === 0;
 
 	return (
-		<div className="bg-gray-900 rounded-3xl p-8 max-w-md w-full font-bangla">
+		<div className="bg-gray-900 rounded-3xl p-4 max-w-md w-full font-bangla">
 			{/* Header Section */}
-			<div className="flex items-start justify-between mb-8">
+			<div className="flex items-start justify-between mb-8 p-1">
 				<div>
 					<h1 className="text-white text-3xl font-bold mb-2 font-[family-name:var(--font-geist-sans)]">
 						{person.name}
@@ -28,7 +28,7 @@ export default function PersonCard({ person }: { person: Person }) {
 			</div>
 
 			{/* Details Section */}
-			<div className="space-y-4 mb-6">
+			<div className="space-y-4 mb-6 p-1">
 				<div className="flex justify-between text-gray-300">
 					<span>বাজার মোট:</span>
 					<span className="font-medium">
@@ -42,7 +42,7 @@ export default function PersonCard({ person }: { person: Person }) {
 					<span>মোট মিল:</span>
 					<span className="font-medium">
 						<span className="font-[family-name:var(--font-geist-sans)]">
-							{person.meals}
+							{person.meals}{" "}
 						</span>
 						টা
 					</span>
@@ -50,7 +50,7 @@ export default function PersonCard({ person }: { person: Person }) {
 				<div className="flex justify-between text-gray-300">
 					<span>খাবার খরচ:</span>
 					<span className="font-medium">
-						৳
+						৳{" "}
 						<span className="font-[family-name:var(--font-geist-sans)]">
 							{person.mealExpense}
 						</span>
