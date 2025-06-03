@@ -17,7 +17,7 @@ export default async function AllPersonCard() {
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{persons.map((person, index) => (
-					<PersonCard key={index} person={person} />
+					<PersonCard key={index} person={person} i={index} />
 				))}
 			</div>
 		</main>

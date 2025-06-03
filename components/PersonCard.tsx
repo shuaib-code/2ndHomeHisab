@@ -1,12 +1,21 @@
 import type { Person } from "@/types/Person";
 
-export default function PersonCard({ person }: { person: Person }) {
+export default function PersonCard({
+	person,
+	i,
+}: {
+	person: Person;
+	i: number;
+}) {
 	const isOwed = person.amount < 0;
 	const absoluteAmount = Math.abs(person.amount);
 	const isSettled = person.amount === 0;
 
 	return (
-		<div className="bg-gray-900 rounded-3xl p-4 max-w-md w-full font-bangla">
+		<div
+			className="card-animated bg-gray-900 rounded-3xl p-4 max-w-md w-full font-bangla animate-zoomIn"
+			style={{ animationDelay: `${i * 100}ms` }}
+		>
 			{/* Header Section */}
 			<div className="flex items-start justify-between mb-8 p-1">
 				<div>

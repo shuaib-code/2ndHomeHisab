@@ -36,3 +36,21 @@ body {
 .font-mono {
   font-family: var(--font-geist-mono);
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-animated {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  /* ensure animation starts from transparent */
+}
