@@ -1,22 +1,26 @@
 import type { Person } from "@/types/Person";
 
-export default function PersonCard({
-	person,
-	i,
-}: {
+type Props = {
 	person: Person;
 	i: number;
-}) {
+};
+
+export default function PersonCard({ person, i }: Props) {
 	const isOwed = person.amount < 0;
 	const absoluteAmount = Math.abs(person.amount);
 	const isSettled = person.amount === 0;
 
 	return (
 		<div
-			className="card-animated bg-gray-900 rounded-3xl p-4 max-w-md w-full font-bangla animate-zoomIn"
+			id={person.name}
+			className={`relative overflow-hidden card-animated bg-gray-900 rounded-3xl p-4 max-w-md w-full font-bangla animate-zoomIn border border-gray-800 `}
 			style={{ animationDelay: `${i * 100}ms` }}
 		>
 			{/* Header Section */}
+
+			<h1 className="absolute text-gray-500/10 -z-10 left-1/8 top-25 -rotate-30 text-8xl font-bold mb-2 font-[family-name:var(--font-geist-sans)]">
+				{person.name}
+			</h1>
 			<div className="flex items-start justify-between mb-8 p-1">
 				<div>
 					<h1 className="text-white text-3xl font-bold mb-2 font-[family-name:var(--font-geist-sans)]">
@@ -24,13 +28,15 @@ export default function PersonCard({
 					</h1>
 				</div>
 				<div
-					className={`px-4 py-2 rounded-full text-sm font-medium ${
-						isSettled
-							? "bg-blue-600 text-blue-100"
-							: isOwed
-							? "bg-emerald-600 text-emerald-100"
-							: "bg-red-600 text-red-100"
-					}`}
+					className={`px-4 py-2 rounded-full text-sm font-medium transition
+						${
+							isSettled
+								? "bg-gradient-to-br from-blue-500 to-blue-800 text-blue-100"
+								: isOwed
+								? "bg-gradient-to-br from-emerald-500 to-emerald-800 text-emerald-100"
+								: "bg-gradient-to-br from-red-500 to-red-800 text-red-100"
+						}
+					  `}
 				>
 					{isSettled ? "সমান" : isOwed ? "পাবেন" : "দিতে হবে"}
 				</div>
@@ -39,7 +45,7 @@ export default function PersonCard({
 			{/* Details Section */}
 			<div className="space-y-4 mb-6 p-1">
 				<div className="flex justify-between text-gray-300">
-					<span>বাজার মোট:</span>
+					<span>বাজার খরচ:</span>
 					<span className="font-medium">
 						৳{" "}
 						<span className="font-[family-name:var(--font-geist-sans)]">
@@ -57,7 +63,7 @@ export default function PersonCard({
 					</span>
 				</div>
 				<div className="flex justify-between text-gray-300">
-					<span>খাবার খরচ:</span>
+					<span>মিল খরচ:</span>
 					<span className="font-medium">
 						৳{" "}
 						<span className="font-[family-name:var(--font-geist-sans)]">

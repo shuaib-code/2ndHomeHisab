@@ -22,7 +22,7 @@ export default function Footer() {
 					</div>
 
 					{/* Quick Links */}
-					<div>
+					{/* <div>
 						<h4 className="text-white font-semibold mb-4">দ্রুত লিংক</h4>
 						<ul className="space-y-2">
 							<li>
@@ -58,7 +58,7 @@ export default function Footer() {
 								</a>
 							</li>
 						</ul>
-					</div>
+					</div> */}
 
 					{/* Contact */}
 					<div>
