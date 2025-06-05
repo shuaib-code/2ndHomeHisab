@@ -8,7 +8,6 @@ export default async function AllPersonCard({ persons }: PersonsProps) {
 		.sort((a, b) => a.meals - b.meals)
 		.map((person) => person.name);
 
-	console.log(names);
 	return (
 		<main className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8 py-2">
 			<div className="mb-8">
