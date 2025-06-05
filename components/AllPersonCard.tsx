@@ -15,7 +15,7 @@ export default async function AllPersonCard({ persons }: PersonsProps) {
 					সদস্যদের হিসাব
 				</h2>
 				<p className="text-gray-300 font-[family-name:var(--font-geist-sans)]">
-					Members&apos; Expense Summary
+					Member&apos;s Expense Summary
 				</p>
 			</div>
 			<NameNavigation names={names} />
@@ -44,7 +44,7 @@ function NameNavigation({ names }: { names: string[] }) {
 			inline-block
 			px-6 py-2
 			rounded-full
-			text-sm font-normal
+			text-sm font-medium
 			text-gray-300 bg-gradient-to-br hover:from-emerald-400 hover:to-emerald-600
 			from-green-600 to-emerald-800
 			focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2

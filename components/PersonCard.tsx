@@ -141,8 +141,8 @@ export default function PersonCard({ person, i }: Props) {
 						{isSettled
 							? "All settled! No amount due"
 							: isOwed
-							? `You will get ৳${absoluteAmount}`
-							: `You have to pay ৳${absoluteAmount}`}
+							? `You will get ${absoluteAmount} Taka`
+							: `You have to pay ${absoluteAmount} Taka`}
 					</p>
 				</div>
 			</div>
