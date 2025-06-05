@@ -9,7 +9,7 @@ const BASE_URL =
 export async function getAllPerson() {
 	try {
 		const res = await fetch(BASE_URL, {
-			next: { revalidate: 30 }, // Revalidate every 30 seconds
+			next: { revalidate: 2 * 60 }, // Revalidate every 120 seconds
 		});
 
 		if (!res.ok) {

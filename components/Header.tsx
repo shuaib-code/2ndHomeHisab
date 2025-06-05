@@ -1,13 +1,11 @@
-import { getAllPerson } from "@/services";
 import { Person } from "@/types/Person";
+import { PersonsProps } from "@/types/Props";
 import { Calculator, ShoppingCart, Soup, Users, Utensils } from "lucide-react";
 import { Brand } from "./Brand";
 
-export default async function Header() {
-	const allPersonData: Person[] = await getAllPerson();
-	const totalPeople = allPersonData.length;
-	const totalBazarCost = allPersonData.reduce(getTotalBazarCost, 0);
-	const totalMeals = allPersonData.reduce(getTotalMeal, 0);
+export default async function Header({ persons }: PersonsProps) {
+	const totalBazarCost = persons.reduce(getTotalBazarCost, 0);
+	const totalMeals = persons.reduce(getTotalMeal, 0);
 
 	return (
 		<header className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 border-b border-gray-700">
@@ -37,7 +35,7 @@ export default async function Header() {
 					<div className="grid grid-cols-1 md:grid-cols-4 gap-6">
 						<StatCard
 							label="মোট সদস্য"
-							value={totalPeople}
+							value={persons.length || "Not found"}
 							icon={<Users className="h-8 w-8 text-blue-400" />}
 							subtext="Total Members"
 						/>

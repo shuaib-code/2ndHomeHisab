@@ -1,12 +1,8 @@
-import { Person } from "@/types/Person";
+import { PersonsProps } from "@/types/Props";
 import Link from "next/link";
 import PersonCard from "./PersonCard";
 
-type Props = {
-	persons: Person[];
-};
-
-export default async function AllPersonCard({ persons }: Props) {
+export default async function AllPersonCard({ persons }: PersonsProps) {
 	const names = persons
 		.slice()
 		.sort((a, b) => a.meals - b.meals)

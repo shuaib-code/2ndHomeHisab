@@ -2,7 +2,7 @@ import { Cat } from "lucide-react";
 
 export function Brand() {
 	return (
-		<div className="flex items-center space-x-2 mb-4 mt-2">
+		<div className="flex items-center space-x-2 mb-4 mt-4">
 			<div className="bg-emerald-600 p-2 rounded-lg">
 				<Cat className="h-6 w-6 text-white" />
 			</div>
