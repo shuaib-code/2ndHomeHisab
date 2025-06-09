@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/app/person/
 
 # next.js
 /.next/
